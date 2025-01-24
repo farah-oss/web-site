@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض فيديوهات لقطط</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #f7f7f7;">
+    <div class="container">
+        <h1>love your smile ~</h1>
+         <h2>gonna see cats with every click</h2>
+
+        <button onclick="showRandomCatVideos()"> click</button>
+        
+        <div id="catVideos" style="margin-top: 20px; display: none;">
+           
+        </div>
+    </div>
+
+    <script>
+        // عرض فيديوهات لقطط عشوائية
+function showRandomCatVideos() {
+    const catVideos = [
+        'vid1.mov', // ضع المسارات الفعلية للفيديوهات
+        'vid2.mov',
+        'vid3.mov',
+        'vid4.mov',
+        'vid5.mov',
+        'vid6.mov',
+        'vid7.mov',
+        'vid8.mov',
+        'vid9.mov',
+        'vid10.mov',
+        'vid11.mov',
+        'vid12.mov',
+        'vid13.mov',
+        'vid14.mov',
+        'vid15.mov',
+        'vid16.mov',
+        'vid17.mov',
+        'vid18.mov',
+        'vid19.mov',
+        'vid20.mov',
+        'vid21.mov',
+        'vid22.mov',
+    ];
+    const randomVideo = catVideos[Math.floor(Math.random() * catVideos.length)];
+    
+    const videoContainer = document.getElementById('catVideos');
+    videoContainer.style.display = 'block';
+    videoContainer.innerHTML = `<video width="300" height="300" autoplay controls style="border-radius: 10px;">
+                                    <source src="${randomVideo}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>`;
+}
+
+    </script>
+</body>
+</html>
